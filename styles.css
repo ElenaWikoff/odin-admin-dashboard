@@ -67,13 +67,6 @@ body {
     grid-template-rows: 500px 1fr;
 }
 
-@media screen and (max-width: 1024px) {
-    .dashboard {
-        grid-template-columns: 205px 10fr;
-    }
-
-}
-
 /* Sidebar */
 
 .sidebar {
@@ -212,4 +205,26 @@ body {
     background-color: var(--grey);
     grid-column: 3 / -1;
     grid-row: 2;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+    .dashboard {
+        grid-template-columns: 205px 10fr;
+    }
+
+    .sidebar .sidebar-header {
+        padding: 15px;
+    }
+
+    .sidebar .sidebar-nav {
+        gap: 25px;
+    }
+
+    .sidebar .sidebar-nav>ul>li {
+        font-size: 1.25rem;
+        padding: 5px 15px;
+    }
+
 }

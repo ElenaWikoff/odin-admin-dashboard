@@ -40,6 +40,14 @@ body {
     object-fit: cover;
 }
 
+.button-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .btn {
     cursor: pointer;
 }
@@ -53,7 +61,22 @@ body {
     transition: all 0.1s ease;
 }
 
-.btn.btn-icon:focus,
+.btn.btn-primary {
+    border-radius: 30px;
+    color: white;
+    background-color: var(--blue);
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.275rem;
+    font-weight: 500;
+    transition: all 0.1s ease;
+}
+
+.btn.btn-primary:active,
+.btn.btn-primary:hover {
+    background-color: var(--blue-hover);
+}
+
 .btn.btn-icon:active,
 .btn.btn-icon:hover {
     color: var(--blue);
@@ -64,7 +87,7 @@ body {
 .dashboard {
     display: grid;
     grid-template-columns: 300px 10fr;
-    grid-template-rows: 500px 1fr;
+    grid-template-rows: auto 1fr;
 }
 
 /* Sidebar */
@@ -85,7 +108,7 @@ body {
     grid-template-columns: 1fr 5fr;
     place-content: flex-start;
     gap: 15px;
-    padding: 30px 15px;
+    padding: 15px;
     cursor: pointer;
 }
 
@@ -146,7 +169,8 @@ body {
     grid-column: 3 / -1;
     grid-row: 1;
     background-color: white;
-    padding: 30px 50px;
+    padding: 15px 50px;
+    box-shadow: rgba(0, 0, 0, 0.75) 2.4px 2.4px 3.2px;
 }
 
 .header .main-header {
@@ -193,6 +217,19 @@ body {
 
 .header .main-header .profile-circle {
     max-width: 60px;
+}
+
+.header .sub-header {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    align-items: center;
+}
+
+.header .sub-header .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
 .header .sub-header .profile-circle {

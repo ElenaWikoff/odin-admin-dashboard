@@ -63,8 +63,15 @@ body {
 
 .dashboard {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 300px 10fr;
     grid-template-rows: 500px 1fr;
+}
+
+@media screen and (max-width: 1024px) {
+    .dashboard {
+        grid-template-columns: 205px 10fr;
+    }
+
 }
 
 /* Sidebar */
@@ -117,6 +124,7 @@ body {
 
 .sidebar .sidebar-nav>ul>li {
     position: relative;
+    /* max-width: 100%; */
     display: grid;
     grid-template-columns: 1fr 5fr;
     list-style: none;

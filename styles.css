@@ -1,5 +1,6 @@
 :root {
     --blue: #1992d4;
+    --blue-hover: #1FB1FF;
     --yellow: #f0b429;
     --grey: #e2e8f0;
 }
@@ -39,10 +40,71 @@ main {
 
 .sidebar {
     grid-area: sidebar;
-    color: white;
-    background-color: var(--blue);
     grid-column: 1 / span 2;
     grid-row: 1 / -1;
+    color: white;
+    background-color: var(--blue);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 30px;
+}
+
+.sidebar .sidebar-header {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    place-content: flex-start;
+    gap: 15px;
+    padding: 30px 15px;
+    cursor: pointer;
+}
+
+.sidebar .sidebar-header svg {
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    justify-self: flex-end;
+}
+
+.sidebar .sidebar-header h1 {
+    align-self: center;
+    justify-self: flex-start;
+    font-size: 1.75rem;
+}
+
+.sidebar .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.sidebar .sidebar-nav>ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-auto-rows: 1fr;
+}
+
+.sidebar .sidebar-nav>ul>li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    list-style: none;
+    cursor: pointer;
+    padding: 5px 30px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--blue-hover), var(--blue-hover), var(--blue), var(--blue), var(--blue));
+    background-size: 200% 100%;
+    background-position: 100% 0%;
+    transition: all 0.25s ease;
+}
+
+.sidebar .sidebar-nav>ul>li:focus,
+.sidebar .sidebar-nav>ul>li:active,
+.sidebar .sidebar-nav>ul>li:hover {
+    background-position: 0% 0%;
+    border-left: 10px solid var(--yellow);
 }
 
 /* Header */
